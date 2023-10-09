@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import IngredientList from "../../components/IngredientList";
 import { getCollection } from "astro:content";
 // 1. Generate a new path for every collection entry
+export const prerender = true;
 export async function getStaticPaths() {
   const recipeEntries = await getCollection("recipes");
   return recipeEntries.map((entry) => ({
